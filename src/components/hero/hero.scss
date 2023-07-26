@@ -1,0 +1,32 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/resets" as *;
+
+
+.hero{
+    padding: 1.6rem 1.6rem;
+
+    &__video{
+        width: 100%;
+        height: 25vh;
+        margin: auto;
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+    }
+    &__bot{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__views{
+        display: flex;
+
+    }
+    &__likes{
+        display: flex;
+    }
+}
