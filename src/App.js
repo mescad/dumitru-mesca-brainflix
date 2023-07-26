@@ -3,22 +3,27 @@ import NavBar from "./components/navbar/navbar";
 import VideoDetails from "./data/video-details.json";
 import Videos from "./data/videos.json";
 import Hero from "./components/hero/hero";
+import NextVideos from "./components/NextVideos/NextVideos";
+import { useState } from "react";
 
 function App() {
   // console.log(VideoDetails);
 
-  const PageVideo = VideoDetails[0];
-  console.log(PageVideo);
 
-  let views = PageVideo.views;
-  let likes = PageVideo.likes;
-  let title = PageVideo.title;
-  let description = PageVideo.description;
-  let channel = PageVideo.channel;
-  let timestamp = PageVideo.timestamp;
-  let image = PageVideo.image;
+  //use state for the full list of videos - will have to be passed as a prop to the recommended videos and filtered
+  // use state for the current video
+  //function to update the current video state
+  //pass this function as a prop to the videolist
 
-  let dateArray= new Date(timestamp)
+// const [currentArray, setCurrentArray]=useState[VideoDetails]
+  
+  //invoke function and give id
+const [currentVideo, setCurrentVideo]= useState(VideoDetails[0])
+
+const nextVideos= VideoDetails.filter(video=>video.id !== currentVideo.id)
+
+///time conversion
+  let dateArray= new Date(currentVideo.timestamp)
   let date= dateArray.toLocaleDateString()
 
 
@@ -29,20 +34,21 @@ function App() {
 
 
 
-  console.log(views);
+
 
   return (
     <div>
       <NavBar />
       <Hero
-        title={title}
-        likes={likes}
-        views={views}
-        channel={channel}
+        title={currentVideo.title}
+        likes={currentVideo.likes}
+        views={currentVideo.views}
+        channel={currentVideo.channel}
         date={date}
-        image={image}
-        description={description}
+        image={currentVideo.image}
+        description={currentVideo.description}
       />
+      <NextVideos nextvideos={nextVideos} onVideoSelect={setCurrentVideo}/>
     </div>
   );
 }
