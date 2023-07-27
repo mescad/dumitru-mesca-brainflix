@@ -1,17 +1,19 @@
 import VideoCard from "../videoCard/VideoCard";
-function NextVideos(props) {
+import './NextVideos.scss'
 
 
+function NextVideos({nextvideos, onVideoSelect}) {
 
 function VideoClick(video){
-    props.onVideoSelect(video)
+    onVideoSelect(video)
 }
   
   return (
-    <section>
-        <h4> Next Videos</h4>
-      {props.nextvideos.map((video) => (
+    <section className="nextvid">
+        <h4 className="nextvid__title"> Next Videos</h4>
+      {nextvideos.map((video) => (
         <VideoCard
+          key={video.id}
           title={video.title}
           id={video.id}
           image={video.image}

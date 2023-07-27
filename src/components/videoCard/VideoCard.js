@@ -1,12 +1,14 @@
-function VideoCard(props){
+import './VideoCard.scss'
+
+function VideoCard({click,id,image,title,channel}){
 
     return(
-        <section id={props.id} className='videocard__section' onClick={props.click}> 
+        <section id={id} className='videocard' onClick={click}> 
 
-            <img className="videocard__thumbnail" src={props.image}/>
-            <div>
-            <h3 className="videocard__title">{props.title}</h3>
-            <h4 className="videocard__channel">{props.channel}</h4>
+            <img alt='video_thumb' className="videocard__thumbnail" src={image}/>
+            <div className='videocard__info'>
+            <h3 className="videocard__title">{title}</h3>
+            <h4 className="videocard__channel">{channel}</h4>
             </div>
         
        </section>

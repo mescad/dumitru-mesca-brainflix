@@ -1,10 +1,12 @@
 import "./App.css";
 import NavBar from "./components/navbar/navbar";
 import VideoDetails from "./data/video-details.json";
-import Videos from "./data/videos.json";
+//import Videos from "./data/videos.json";
 import Hero from "./components/hero/hero";
 import NextVideos from "./components/NextVideos/NextVideos";
 import { useState } from "react";
+import CommentList from "./components/commentlist/commentlist";
+import CommentForm from "./components/commentform/commentform";
 
 function App() {
   // console.log(VideoDetails);
@@ -47,7 +49,12 @@ const nextVideos= VideoDetails.filter(video=>video.id !== currentVideo.id)
         date={date}
         image={currentVideo.image}
         description={currentVideo.description}
+        comments={currentVideo.comments}
       />
+      <CommentForm />
+      <CommentList comments={currentVideo.comments}/>
+
+
       <NextVideos nextvideos={nextVideos} onVideoSelect={setCurrentVideo}/>
     </div>
   );
