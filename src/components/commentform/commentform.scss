@@ -3,12 +3,75 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/resets" as *;
 
-.inputcom{
-    padding: 1.6rem 1.6rem;
 
+
+
+
+.inputcom{
+    // padding: 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    border-bottom: 0.1rem solid $secondary-dark;
+
+    &__wrapper{
+        padding: 0rem 1.6rem;
+    }
+
+
+    &__half-left{
+        padding-top: 2rem;
+
+    }
     &__avatar{
         width: 3.6rem;
         height: 3.6rem;
         border-radius: 50%;
+        
+    }
+
+
+
+
+
+    &__half-right{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+
+    &__label{
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $primary-dark;
+    }
+    &__input{
+        height: 10rem;
+        margin-top: 0.5rem;
+        background-color: $secondary-light;
+        border: 0.1rem solid $primary-dark;
+        border-radius: 0.4rem;
+
+        &::placeholder{
+            font-family: "AvenirNextLTPro", monospace, serif;
+            padding-left: 1rem;
+            padding-top: 1rem;
+            color: $primary-main;
+        }
+    }
+
+    &__button{
+        margin-top: 1.6rem;
+        //width: 15rem;
+        height: 4rem;
+        background-color: $primary-alternative;
+        border: none;
+        border-radius: 0.4rem;
+        color: $primary-light;
+        margin-bottom: 1.6rem;
+        background-image: url(../../assets/Icons/add_comment.svg);
+        background-repeat: no-repeat;
+        background-position: left 1rem center;
     }
 }

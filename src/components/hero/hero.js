@@ -9,13 +9,15 @@ function Hero(props) {
         <video controls poster={props.image}  className="hero__video"  />
       </div>
 
+      <section className="hero__wrapper">
+
       <div className="hero__mid">
         <h3 className="hero__title">{props.title}</h3>
       </div>
 
       <div className="hero__bot">
         <div className="hero__info hero__info--left">
-          <p className="hero__channel">{props.channel}</p>
+          <p className="hero__channel">By {props.channel}</p>
           <p className="hero__time">{props.date} </p>
         </div>
 
@@ -39,6 +41,8 @@ function Hero(props) {
       <article>
         <p className="hero__commentcount">{props.comments.length} Comments</p>
       </article>
+
+      </section>
 
 
     </section>

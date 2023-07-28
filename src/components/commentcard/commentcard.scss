@@ -5,6 +5,42 @@
 
 .card{
 
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    border-bottom: 0.1rem solid $secondary-dark;
+    padding-top: 1.6rem;
+
+    &__icon{
+        width: 3.6rem;
+        height: 3.6rem;
+        background-color: $secondary-dark;
+        border-radius: 50%;
+    }
+
+&__top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+&__name{
+    font-size: 1.3rem;
+    margin: 0;
+
+}
+
+&__date{
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+&__text{
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+}
+
+
 
     &__likes{
         display: none;

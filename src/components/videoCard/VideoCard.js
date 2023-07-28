@@ -3,7 +3,7 @@ import './VideoCard.scss'
 function VideoCard({click,id,image,title,channel}){
 
     return(
-        <section id={id} className='videocard' onClick={click}> 
+        <section id={id} className='videocard' onClick={()=>click(id)}> 
 
             <img alt='video_thumb' className="videocard__thumbnail" src={image}/>
             <div className='videocard__info'>

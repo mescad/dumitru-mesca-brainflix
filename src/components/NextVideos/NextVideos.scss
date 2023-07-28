@@ -2,3 +2,17 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography";
 @use "../../styles/partials/resets" as *;
+
+
+.nextvid{
+    padding: 1.6rem 1.6rem;
+
+    &__title{
+        margin: 1.2rem 0rem;
+        margin-top: 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $primary-dark;
+
+    }
+}
