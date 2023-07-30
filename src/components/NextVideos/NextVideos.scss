@@ -11,6 +11,10 @@
         max-width: 102rem;
         margin: auto;
     }
+    @include desktop{
+        padding: 0;
+        padding-top: 1.6rem;
+    }
 
     &__title{
         margin: 1.2rem 0rem;
