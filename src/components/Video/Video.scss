@@ -1,0 +1,30 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/resets" as *;
+
+
+
+.videosection {
+    &__wrapper {
+      padding: 0rem 1.6rem;
+      @include tablet{
+        padding: 0rem 3.6rem;
+        max-width: 102rem;
+        margin: auto;
+      }
+    }
+  
+    &__video {
+      width: 100%;
+      object-fit: cover;
+  
+      &::-webkit-media-controls-panel {
+        width: 100%;
+        box-shadow: none;
+      }
+      &::-webkit-media-controls-timeline {
+        width: 80%;
+      }
+    }
+}

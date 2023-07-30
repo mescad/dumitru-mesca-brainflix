@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import NavBar from "./components/navbar/navbar";
 import VideoDetails from "./data/video-details.json";
 import Videos from "./data/videos.json"
@@ -7,6 +7,7 @@ import NextVideos from "./components/NextVideos/NextVideos";
 import { useState } from "react";
 import CommentList from "./components/commentlist/commentlist";
 import CommentForm from "./components/commentform/commentform";
+import Video from "./components/Video/Video";
 
 function App() {
 
@@ -33,6 +34,9 @@ const handleVideoClick= (id)=>{
   return (
     <div>
       <NavBar />
+      <Video image={currentVideo.image} />
+      <section className="app__separation"> 
+      <div className="app__half app__half--left"> 
       <Hero
         title={currentVideo.title}
         likes={currentVideo.likes}
@@ -43,11 +47,16 @@ const handleVideoClick= (id)=>{
         description={currentVideo.description}
         comments={currentVideo.comments}
       />
+      
+      
       <CommentForm />
       <CommentList comments={currentVideo.comments}/>
+      </div>
 
-
+     <div className="app__half app__half--right">
       <NextVideos nextvideos={nextVideos} VideoSelect={handleVideoClick}/>
+      </div>
+      </section>
     </div>
   );
 }

@@ -5,10 +5,7 @@ import viewlogo from '../../assets/Icons/views.svg'
 function Hero(props) {
   return (
     <section className="hero">
-      <div className="hero__top">
-        <video controls poster={props.image}  className="hero__video"  />
-      </div>
-
+      
       <section className="hero__wrapper">
 
       <div className="hero__mid">

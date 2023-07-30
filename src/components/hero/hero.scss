@@ -6,6 +6,11 @@
 .hero {
   &__wrapper {
     padding: 0rem 1.6rem;
+    @include tablet{
+      padding: 0rem 3.6rem;
+      max-width: 102rem;
+      margin: auto;
+    }
   }
 
   &__video {
@@ -23,6 +28,9 @@
 
   &__mid {
     border-bottom: 0.1rem solid $secondary-dark;
+    @include tablet{
+      border-bottom: none;
+    }
   }
   &__bot {
     border-bottom: 0.1rem solid $secondary-dark;
@@ -30,29 +38,49 @@
 
   &__title {
     font-size: 2.4rem;
-    font-weight: 500;
+    font-weight: 700;
+    margin: 2.4rem 0rem;
+    @include tablet{
+      font-size:3.3rem;
+      margin: 3.6rem 0rem;
+    }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
+    @include tablet{
+      flex-direction: row;
+      gap: 2rem;
+      
+    }
   }
 
   &__channel {
-    font-weight: 600;
+    font-weight: 700;
     color: $primary-main;
+    @include tablet{
+      font-size: 1.4rem;
+    }
   }
 
   &__time {
     color: $primary-dark;
     margin-top: 0.5rem;
+    @include tablet{
+      margin-top: auto;
+      font-size: 1.4rem;
+    }
   }
 
   &__bot {
     display: flex;
     justify-content: flex-start;
     gap: 7rem;
+    @include tablet{
+      justify-content: space-between;
+    }
   }
 
   &__views {
@@ -60,25 +88,43 @@
     gap: 1rem;
     font-size: 1.2rem;
     color: $primary-dark;
+    @include tablet{
+      font-size: 1.4rem;
+    }
   }
   &__likes {
     display: flex;
     gap: 1rem;
     font-size: 1.2rem;
     color: $primary-dark;
+    @include tablet{
+      font-size: 1.4rem;
+    }
 
     &__count {
       margin-top: 0.5rem;
+      @include tablet{
+        margin-top: auto;
+      }
     }
   }
 
   &__description {
     font-size: 1.3rem;
     line-height: 1.8rem;
+    @include tablet{
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      margin: 2.4rem 0rem;
+    }
   }
 
   &__commentcount{
     font-size: 1.3rem;
     font-weight: 600;
+    @include tablet{
+      font-size: 1.4rem;
+      margin: 2.4rem 0rem;
+    }
   }
 }

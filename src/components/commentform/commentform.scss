@@ -8,14 +8,25 @@
 
 
 .inputcom{
-    // padding: 1.6rem 1.6rem;
+    padding-bottom: 1.6rem;
     display: flex;
     flex-direction: row;
     gap: 2rem;
     border-bottom: 0.1rem solid $secondary-dark;
+    margin-right: auto;
+    justify-content: center;
+
+    
+    
 
     &__wrapper{
         padding: 0rem 1.6rem;
+        
+        @include tablet{
+            padding: 0rem 3.6rem;
+            max-width: 102rem;
+            margin: auto;
+        }
     }
 
 
@@ -27,6 +38,10 @@
         width: 3.6rem;
         height: 3.6rem;
         border-radius: 50%;
+        @include tablet{
+            width: 4rem;
+            height: 4rem;
+        }
         
     }
 
@@ -38,6 +53,19 @@
         display: flex;
         flex-direction: column;
         width: 80%;
+        @include tablet{
+            flex-direction: row;
+            gap: 2rem;
+            width: 100%;
+            margin-right: auto;
+        }
+    }
+
+    &__minigroup{
+        display: flex;
+        flex-direction: column;
+        width: 100% ;
+
     }
 
 
@@ -52,6 +80,11 @@
         background-color: $secondary-light;
         border: 0.1rem solid $primary-dark;
         border-radius: 0.4rem;
+        @include tablet{
+            height: 4rem;
+            width: 100%;
+            
+        }
 
         &::placeholder{
             font-family: "AvenirNextLTPro", monospace, serif;
@@ -63,7 +96,6 @@
 
     &__button{
         margin-top: 1.6rem;
-        //width: 15rem;
         height: 4rem;
         background-color: $primary-alternative;
         border: none;
@@ -73,5 +105,9 @@
         background-image: url(../../assets/Icons/add_comment.svg);
         background-repeat: no-repeat;
         background-position: left 1rem center;
+        @include tablet{
+            min-width: 15rem;
+            
+        }
     }
 }

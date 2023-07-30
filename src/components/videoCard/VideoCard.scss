@@ -8,10 +8,15 @@
     padding: 0.4rem 0rem;
 
     display: flex;
-    // gap: 3rem;
+    
    
     justify-content: space-between;
     align-items: center;
+
+    @include tablet{
+        justify-content: flex-start;
+        gap: 2rem;
+    }
 
 
     &__thumbnail{
@@ -23,6 +28,14 @@
     &__info{
         width: 60vw;
         padding-left: 2rem;
+        @include tablet{
+            padding-left: 0;
+            width: 20vw;
+        }
+
+        @include desktop{
+            width: 10vw;
+        }
         
     }
 
