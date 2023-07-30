@@ -3,19 +3,17 @@
 @use "./styles/partials/typography";
 @use "./styles/partials/resets" as *;
 
-
-.app__separation{
-    @include desktop{
+.app__separation {
+  @include desktop {
     display: flex;
     flex-direction: row;
     max-width: 102rem;
     margin: auto;
+  }
+
+  &__half--left {
+    @include desktop {
+      width: 100%;
     }
-    
-    &__half--left{
-        @include desktop{
-         width: 100%;
-        }
-        
-    }
+  }
 }

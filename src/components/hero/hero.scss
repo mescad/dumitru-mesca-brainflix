@@ -6,7 +6,7 @@
 .hero {
   &__wrapper {
     padding: 0rem 1.6rem;
-    @include tablet{
+    @include tablet {
       padding: 0rem 3.6rem;
       max-width: 102rem;
       margin: auto;
@@ -28,7 +28,7 @@
 
   &__mid {
     border-bottom: 0.1rem solid $secondary-dark;
-    @include tablet{
+    @include tablet {
       border-bottom: none;
     }
   }
@@ -40,11 +40,11 @@
     font-size: 2.4rem;
     font-weight: 700;
     margin: 2.4rem 0rem;
-    @include tablet{
-      font-size:3.3rem;
+    @include tablet {
+      font-size: 3.3rem;
       margin: 3.6rem 0rem;
     }
-    @include desktop{
+    @include desktop {
       margin: 1.6rem 0rem;
     }
   }
@@ -53,17 +53,16 @@
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
-    @include tablet{
+    @include tablet {
       flex-direction: row;
       gap: 2rem;
-      
     }
   }
 
   &__channel {
     font-weight: 700;
     color: $primary-main;
-    @include tablet{
+    @include tablet {
       font-size: 1.4rem;
     }
   }
@@ -71,7 +70,7 @@
   &__time {
     color: $primary-dark;
     margin-top: 0.5rem;
-    @include tablet{
+    @include tablet {
       margin-top: auto;
       font-size: 1.4rem;
     }
@@ -81,7 +80,7 @@
     display: flex;
     justify-content: flex-start;
     gap: 7rem;
-    @include tablet{
+    @include tablet {
       justify-content: space-between;
     }
   }
@@ -91,7 +90,7 @@
     gap: 1rem;
     font-size: 1.2rem;
     color: $primary-dark;
-    @include tablet{
+    @include tablet {
       font-size: 1.4rem;
     }
   }
@@ -100,13 +99,13 @@
     gap: 1rem;
     font-size: 1.2rem;
     color: $primary-dark;
-    @include tablet{
+    @include tablet {
       font-size: 1.4rem;
     }
 
     &__count {
       margin-top: 0.5rem;
-      @include tablet{
+      @include tablet {
         margin-top: auto;
       }
     }
@@ -115,17 +114,17 @@
   &__description {
     font-size: 1.3rem;
     line-height: 1.8rem;
-    @include tablet{
+    @include tablet {
       font-size: 1.4rem;
       line-height: 2.2rem;
       margin: 2.4rem 0rem;
     }
   }
 
-  &__commentcount{
+  &__commentcount {
     font-size: 1.3rem;
     font-weight: 600;
-    @include tablet{
+    @include tablet {
       font-size: 1.4rem;
       margin: 2.4rem 0rem;
     }
