@@ -24,8 +24,8 @@ function MainPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   const { videoId } = useParams();
-  console.log(videoId);
-
+  
+  
   // const handleVideoClick = (id) => {
   //   const selectedVideo = currentVideo.find((video) => video.id === id);
   //   if (selectedVideo) {
