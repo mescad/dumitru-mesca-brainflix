@@ -1,7 +1,7 @@
 import VideoCard from "../videoCard/VideoCard";
 import "./NextVideos.scss";
 
-function NextVideos({ nextvideos, VideoSelect }) {
+function NextVideos({ nextvideos }) {
   return (
     <section className="nextvid">
       <h4 className="nextvid__title"> NEXT VIDEOS</h4>
@@ -13,7 +13,7 @@ function NextVideos({ nextvideos, VideoSelect }) {
             id={video.id}
             image={video.image}
             channel={video.channel}
-            click={VideoSelect}
+            
           />
         );
       })}

@@ -10,6 +10,7 @@
   justify-content: center;
   padding: 1.6rem 1.6rem;
   gap: 1.6rem;
+  border-bottom: 0.1rem solid $primary-dark;
 
   @include tablet {
     flex-direction: row;
@@ -68,8 +69,17 @@
     background-repeat: no-repeat;
     background-position: left 1rem center;
 
+    &--anchor{
+      width: 100%;
+
+      @include tablet{
+        
+      }
+    }
+
     @include tablet {
-      width: 40%;
+      width: 80%;
+      justify-self: flex-end;
     }
   }
   &__group {

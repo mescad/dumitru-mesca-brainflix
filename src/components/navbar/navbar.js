@@ -1,6 +1,7 @@
 import "./navbar.scss";
 import logo from "../../assets/logo/BrainFlix-logo.svg";
 import userPic from "../../assets/images/Mohan-muruge.jpg";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -16,7 +17,7 @@ function NavBar() {
         />
       </div>
 
-      <button className="navbar__button">UPLOAD</button>
+      <Link className='navbar__button--anchor' to='upload'> <button className="navbar__button">UPLOAD</button></Link>
 
       <img
         alt="avatar"
