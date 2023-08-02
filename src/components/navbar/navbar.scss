@@ -10,14 +10,27 @@
   justify-content: center;
   padding: 1.6rem 1.6rem;
   gap: 1.6rem;
+  width: 100%;
   border-bottom: 0.1rem solid $primary-dark;
 
   @include tablet {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 1.6rem 3.6rem;
     max-width: 102rem;
     margin: auto;
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.6rem;
+
+    @include tablet{
+      flex-direction: row;
+      justify-content: flex-end;
+    }
   }
 
   &__logo {
@@ -48,7 +61,7 @@
     background-position: left 1rem center;
 
     @include tablet {
-      width: 70%;
+      width: 100%;
       margin-right: 0;
       display: flex;
       height: 4rem;
@@ -68,19 +81,26 @@
     background-image: url(../../assets/Icons/upload.svg);
     background-repeat: no-repeat;
     background-position: left 1rem center;
+    &:hover{
+      background-color: $secondary-alternative;
+  }
+
+    @include tablet {
+      width: 100%;
+      justify-self: flex-end;
+    }
 
     &--anchor{
       width: 100%;
-
       @include tablet{
-        
+        width: 25%;
       }
+      
+
+      
     }
 
-    @include tablet {
-      width: 80%;
-      justify-self: flex-end;
-    }
+   
   }
   &__group {
     display: flex;
@@ -90,7 +110,11 @@
     max-width: 100%;
     width: 100%;
     @include tablet {
-      margin-left: auto;
+      width: 45%;
+      
+    }
+    @include desktop{
+      width: 20%;
     }
   }
 

@@ -10,17 +10,31 @@
 
 .upload{
     padding: 0rem 1.6rem;
+    @include tablet{
+        padding: 0rem 3.6rem;
+        max-width: 102rem;
+        margin: auto;
+    }
 
 
     &__pagetitle{
         font-size: 2.4rem;
         font-weight: 700;
         margin-bottom: 0rem;
+        @include tablet{
+            font-size: 3.6rem;
+        }
     }
 
     &__form{
         display: flex;
         flex-direction: column;
+        @include desktop{
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+      
         
     }
 
@@ -30,6 +44,10 @@
 
         @include tablet{
             width: 50%;
+        }
+
+        @include desktop{
+            width: 100%;
         }
     }
 
@@ -72,6 +90,21 @@
         
     }
 
+&__videogroup{
+    display: flex;
+    flex-direction: column;
+    @include desktop{
+        width: 55%;
+    }
+}
+
+     &__inputgroup{
+        display: flex;
+        flex-direction: column;
+        @include desktop{
+            width: 100%;
+        }
+     }
 
     &__buttongroup{
         display: flex;
@@ -98,6 +131,10 @@
             background-repeat: no-repeat;
             background-position: left 1rem center;
 
+            &:hover{
+                background-color: $secondary-alternative;
+            }
+
             @include tablet{
                 order: 2;
                 width: 20%;
@@ -107,6 +144,7 @@
         &--cancel{
             height: 4rem;
             width: 20vw;
+            margin: auto;
             
             border: none;
             background-color: white;
@@ -116,9 +154,17 @@
 
             @include tablet{
                 order: 1;
+                width: 10rem;
                 
             
             }
+
+            &--anchor{
+                display: flex;
+                
+            }
+
+            
         }
     }
 

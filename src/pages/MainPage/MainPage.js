@@ -33,6 +33,22 @@ function MainPage() {
   //   }
   // };
 
+
+  //Defining API request by ID function
+  function apiIdRequest(inputID){
+    axios
+    .get(
+      `https://project-2-api.herokuapp.com/videos/${inputID}?api_key=${API_KEY}`
+    )
+    .then((response) => {
+      setCurrentVideo(response.data);
+      setIsLoading(false);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
+
   useEffect(() => {
     axios
       .get(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY}`)
@@ -50,47 +66,14 @@ function MainPage() {
     }
 
     if (!videoId) {
-      axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${nextVideos[0].id}?api_key=${API_KEY}`
-        )
-        .then((response) => {
-          setCurrentVideo(response.data);
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      apiIdRequest(nextVideos[0].id)
     } else {
-      axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${API_KEY}`
-        )
-        .then((response) => {
-          setCurrentVideo(response.data);
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      apiIdRequest(videoId)
     }
   }, [nextVideos, videoId]);
 
-  console.log(currentVideo);
 
-  // /time conversion
 
-  // const { videoId } = useParams();
-
-  // console.log(videoId);
-
-  // const product = VideoDetails.find((vid) => vid.id === videoId);
-
-  // console.log(product);
-
-  // if (!product) {
-  //   return <Navigate to={"/"} />
-  // }
 
   if (isLoading) {
     return <h1> Page is loading</h1>;

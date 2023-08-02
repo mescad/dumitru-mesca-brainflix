@@ -89,6 +89,9 @@
     background-image: url(../../assets/Icons/add_comment.svg);
     background-repeat: no-repeat;
     background-position: left 1rem center;
+    &:hover{
+      background-color: $secondary-alternative;
+  }
     @include tablet {
       min-width: 15rem;
     }
