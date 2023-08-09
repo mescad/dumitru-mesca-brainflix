@@ -20,7 +20,7 @@ function MainPage() {
   function apiIdRequest(inputID) {
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/${inputID}?api_key=${API_KEY}`
+        `${process.env.REACT_APP_BASE_URL}/videos/${inputID}`
       )
       .then((response) => {
         setCurrentVideo(response.data);
@@ -33,7 +33,7 @@ function MainPage() {
 
   useEffect(() => {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY}`)
+      .get(`${process.env.REACT_APP_BASE_URL}/videos/`)
       .then((response) => {
         setNextList(response.data);
       })
