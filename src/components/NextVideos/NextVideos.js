@@ -1,11 +1,11 @@
 import VideoCard from "../videoCard/VideoCard";
 import "./NextVideos.scss";
 
-function NextVideos({ nextvideos }) {
+function NextVideos({ nextVideosList }) {
   return (
     <section className="nextvid">
       <h4 className="nextvid__title"> NEXT VIDEOS</h4>
-      {nextvideos.map((video) => {
+      {nextVideosList.map((video) => {
         return (
           <VideoCard
             key={video.id}

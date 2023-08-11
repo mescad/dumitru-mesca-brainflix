@@ -1,13 +1,14 @@
 import "./UploadPage.scss";
-import NavBar from "../../components/navbar/navbar";
+
 import uploadImage from "../../assets/images/Upload-video-preview.jpg";
-import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useRef } from "react";
 import axios from "axios";
 
 function UploadPage() {
   const [publish, setPublished] = useState(null);
   const formRef = useRef();
+  const navigate = useNavigate();
 
   function publishFunction(event) {
     event.preventDefault();
@@ -17,22 +18,34 @@ function UploadPage() {
       description: formRef.current.description.value,
     };
 
-    axios.post("http://localhost:8080/videos/upload", input).then((response) => {
-      console.log(response.data);
-      setPublished(response.data);
-    }).catch((error)=>{
-      console.error("Error uploading video",error)
-    });
+    axios
+      .post("http://localhost:8080/videos/upload", input)
+      .then((response) => {
+        console.log(response.data);
+        setPublished(response.data);
+        setTimeout(function () {
+          navigate("/");
+        }, 1000);
+      })
+      .catch((error) => {
+        console.error("Error uploading video", error);
+      });
   }
 
   return (
     <>
       <section className="upload">
         <h3 className="upload__pagetitle"> Upload Video</h3>
-        <form className="upload__form" ref={formRef} >
+        <form onSubmit={publishFunction} className="upload__form" ref={formRef}>
+          
+          <section className="upload__videosection"> 
           <div className="upload__videogroup">
             <label className="upload__label">VIDEO THUMBNAIL</label>
-            <img className="upload__thumbnail" src={uploadImage} />
+            <img
+              className="upload__thumbnail"
+              alt="uploadimg"
+              src={uploadImage}
+            />
           </div>
           <div className="upload__inputgroup">
             <label className="upload__label">TITLE YOUR VIDEO </label>
@@ -48,14 +61,27 @@ function UploadPage() {
               placeholder="Add a description to your video"
             />
           </div>
-        </form>
 
-        <div className="upload__buttongroup">
-          <button type='submit' onClick={publishFunction} className="upload__buttongroup--publish">PUBLISH</button>
-          <Link className="upload__buttongroup--cancel--anchor" to="/">
-            <button className="upload__buttongroup--cancel">CANCEL </button>
+
+          </section>
+          
+
+          <div className="upload__buttongroup">
+          <button
+            type="submit"
+            
+            className="upload__buttongroup--publish"
+          >
+            PUBLISH
+          </button>
+          <Link className="upload__buttongroup--cancel" to="/">
+            CANCEL
           </Link>
         </div>
+
+        </form>
+
+        
 
         {publish && (
           <p className="upload__published"> Video Successfully Published! </p>

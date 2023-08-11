@@ -1,9 +1,14 @@
 import avatar from "../../assets/images/Mohan-muruge.jpg";
-import "./commentform.scss";
+import "./CommentForm.scss";
 function CommentForm() {
+
+  function preventRefresh(event){
+    event.preventDefault()
+  }
+
   return (
     <div className="inputcom__wrapper">
-      <form className="inputcom">
+      <form onSubmit={preventRefresh} className="inputcom">
         <div className="inputcom__half inputcom__half-left">
           <img alt="avatar" className="inputcom__avatar" src={avatar} />
         </div>
@@ -17,7 +22,7 @@ function CommentForm() {
               placeholder="Add a new comment"
             />
           </div>
-          <button className="inputcom__button">COMMENT</button>
+          <button  className="inputcom__button">COMMENT</button>
         </div>
       </form>
     </div>

@@ -30,7 +30,7 @@
         display: flex;
         flex-direction: column;
         @include desktop{
-            flex-direction: row;
+            flex-direction: column;
             gap: 2rem;
         }
 
@@ -73,6 +73,7 @@
 
     &__textarea{
         height: 10rem;
+        resize: none;
         &::placeholder{
             
             padding-top: 1rem;
@@ -90,6 +91,15 @@
         
     }
 
+
+&__videosection{
+    @include desktop{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    }
+    
+}
 &__videogroup{
     display: flex;
     flex-direction: column;
@@ -111,12 +121,17 @@
         flex-direction: column;
         gap: 2.4rem;
         justify-content: center;
-        margin-top: 2.4rem;
+        padding-top: 2.4rem;
+        align-items: center;
+        
+    
 
         @include tablet{
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
+            border-top: 0.1rem solid $primary-dark;
+            margin-top: 2.4rem;
         }
 
 
@@ -130,6 +145,7 @@
             background-image: url(../../assets/Icons/publish.svg);
             background-repeat: no-repeat;
             background-position: left 1rem center;
+            width: 100%;
 
             &:hover{
                 background-color: $secondary-alternative;
@@ -142,9 +158,13 @@
         }
 
         &--cancel{
+            display: flex;
             height: 4rem;
             width: 20vw;
-            margin: auto;
+            justify-content: center;
+            align-items: center;
+            
+            
             
             border: none;
             background-color: white;
@@ -159,10 +179,7 @@
             
             }
 
-            &--anchor{
-                display: flex;
-                
-            }
+            
 
             
         }

@@ -1,5 +1,5 @@
-import CommentCard from "../commentcard/commentcard";
-import "./commentlist.scss";
+import CommentCard from "../commentCard/CommentCard";
+import "./CommentList.scss";
 
 function CommentList({ comments }) {
   return (

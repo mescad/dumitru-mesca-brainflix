@@ -1,4 +1,4 @@
-import "./navbar.scss";
+import "./Navbar.scss";
 import logo from "../../assets/logo/BrainFlix-logo.svg";
 import userPic from "../../assets/images/Mohan-muruge.jpg";
 import { Link } from "react-router-dom";

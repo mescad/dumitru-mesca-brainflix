@@ -1,4 +1,4 @@
-import "./commentcard.scss";
+import "./CommentCard.scss";
 
 function CommentCard({ id, timestamp, text, likes, name }) {
   let dateArray = new Date(timestamp);

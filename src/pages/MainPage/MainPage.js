@@ -1,23 +1,23 @@
 import "./MainPage.scss";
-import Hero from "../../components/hero/hero";
-import NextVideos from "../../components/NextVideos/NextVideos";
+import Hero from "../../components/hero/Hero";
+import NextVideos from "../../components/nextVideos/NextVideos";
 import { useState, useEffect } from "react";
-import CommentList from "../../components/commentlist/commentlist";
-import CommentForm from "../../components/commentform/commentform";
-import Video from "../../components/Video/Video";
+import CommentList from "../../components/commentList/CommentList";
+import CommentForm from "../../components/commentForm/CommentForm";
+import Video from "../../components/video/Video";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-const API_KEY = "9663a0a0-cabd-4462-9549-c7dfe61feca5";
+
 
 function MainPage() {
   const [currentVideo, setCurrentVideo] = useState(null);
-  const [nextVideos, setNextList] = useState(null);
+  const [nextVideos, setNextVideos] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const { videoId } = useParams();
 
   //Defining API request by ID function
-  function apiIdRequest(inputID) {
+  function fetchVideoById(inputID) {
     axios
       .get(
         `${process.env.REACT_APP_BASE_URL}/videos/${inputID}`
@@ -35,7 +35,7 @@ function MainPage() {
     axios
       .get(`${process.env.REACT_APP_BASE_URL}/videos/`)
       .then((response) => {
-        setNextList(response.data);
+        setNextVideos(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -48,9 +48,9 @@ function MainPage() {
     }
 
     if (!videoId) {
-      apiIdRequest(nextVideos[0].id);
+      fetchVideoById(nextVideos[0].id);
     } else {
-      apiIdRequest(videoId);
+      fetchVideoById(videoId);
     }
   }, [nextVideos, videoId]);
 
@@ -85,7 +85,7 @@ function MainPage() {
         </div>
 
         <div className="app__half app__half--right">
-          <NextVideos nextvideos={nextVideosList} />
+          <NextVideos nextVideosList={nextVideosList} />
         </div>
       </section>
     </div>

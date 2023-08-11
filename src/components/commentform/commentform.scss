@@ -63,6 +63,7 @@
     margin-top: 0.5rem;
     background-color: $secondary-light;
     border: 0.1rem solid $primary-dark;
+    resize: none;
     border-radius: 0.4rem;
     @include tablet {
       height: 4rem;
